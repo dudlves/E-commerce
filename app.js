@@ -1,22 +1,13 @@
-
-const express = require('express')
+// import {openDb} from './configDB.js';
+import express from 'express';
 const app = express();
+app.use(express.json());
 
 
-import db from "./database/sqlite.js"
 
-
-db()
-app.use(express.json())
-app.get('/', (req, res) => {
-    res.send('Hello Word')
-})
-
-app.post('/usuario', (req, res) => {
-   console.log(req.body)
-    res.json({
-        "statucCode": 200
-    })
-})
+import usuariosRouter from './src/routers/UsuariosRouters.js';
+import produtoRouter from './src/routers/ProdutosRouters.js';
+app.use(usuariosRouter);
+app.use(produtoRouter);
 
 app.listen(3000);
