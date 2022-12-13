@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createTable, insertProduto } from '../controllers/produtos.js';
+import { createTable, insertProduto } from '../dao/produtosDAO.js';
 
 const produtoRouter = Router();
 

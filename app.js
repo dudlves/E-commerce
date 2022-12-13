@@ -5,9 +5,9 @@ app.use(express.json());
 
 
 
-import usuariosRouter from './src/routers/UsuariosRouters.js';
-import produtoRouter from './src/routers/ProdutosRouters.js';
-app.use(usuariosRouter);
-app.use(produtoRouter);
+import usuariosController from './src/controllers/UsuariosController.js';
+import ProdutosController from './src/controllers/ProdutosController.js';
+app.use(usuariosController);
+app.use(ProdutosController);
 
 app.listen(3000);
