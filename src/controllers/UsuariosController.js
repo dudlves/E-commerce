@@ -8,7 +8,7 @@ usuariosController.get('/usuario',selectUsuarios);
 usuariosController.post('/usuario', insertUsuario);
 usuariosController.put('/usuario', updateUsuario);
 usuariosController.delete('/usuario', deleteUsuario);
-usuariosController.post('/login',logado);
+usuariosController.get('/login',logado);
 
 
 export default usuariosController;
