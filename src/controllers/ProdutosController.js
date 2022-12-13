@@ -1,18 +1,20 @@
 import { Router } from "express";
-import { createTable, insertProduto } from '../dao/produtosDAO.js';
+import {createTable, insertProduto ,selectProduto, selectProdutoId, updateProduto, deleteProduto} from '../dao/produtosDAO.js'
 
-const produtoRouter = Router();
+const ProdutosController = Router();
 
 createTable()
-produtoRouter.get('/', (req, res) => {
-    res.send('Hello Word')
-})
+ProdutosController.get('/produto', selectProduto)
 
-produtoRouter.post('/produto', (req, res) => {
-    insertProduto(req.body);
-    res.json({
-        "statucCode": 200
-    })
-})
+ProdutosController.get('/produto:id',selectProdutoId)
 
-export default produtoRouter;
+ProdutosController.post('/produto',insertProduto)
+
+ProdutosController.put('/produto',updateProduto)
+
+ProdutosController.delete('/produto', deleteProduto)
+
+
+
+
+export default ProdutosController;
