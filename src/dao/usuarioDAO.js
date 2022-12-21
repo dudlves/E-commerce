@@ -49,13 +49,4 @@ export async function deleteUsuario(req, res) {
     })
 }
 
-export async function logado(req, res) {
-    let email = req.body.email;
-    let senha = req.body.senha;
-    openDb()
-        .then(db => {
-            db.get('SELECT * FROM Usuario WHERE email=? AND senha=?', [email, senha])
-            .then(usuario => usuario?res.json(usuario):res.json({"Error":"não encontrado usuário buscado"}))
-        })
-}
 
