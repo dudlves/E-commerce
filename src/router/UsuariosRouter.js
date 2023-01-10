@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createTable, selectUsuarios, insertUsuario, updateUsuario, deleteUsuario} from '../dao/usuarioDAO.js';
+import { createTable, selectUsuarios, insertUsuario, updateUsuario, deleteUsuario} from '../controller/usuarioController.js';
 
 const usuariosController = Router();
 createTable()

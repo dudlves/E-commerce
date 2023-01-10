@@ -1,10 +1,11 @@
+// import {openDb} from './configDB.js';
 import express from 'express';
-
 const app = express();
+
 
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
+
 
 import cors from "cors";
 
@@ -14,12 +15,12 @@ const  opitions = {
 
 app.use(cors(opitions));
 
-import usuariosController from './src/controllers/UsuariosController.js';
-import ProdutosController from './src/controllers/ProdutosController.js';
-import CarrinhoController from './src/controllers/CarrinhoController.js';
+import UsuariosRouter from './src/router/UsuariosRouter.js';
+import ProdutosRouter from './src/router/ProdutosRouter.js';
+import CarrinhoRouter from './src/router/CarrinhoRouter.js';
 
-app.use(usuariosController);
-app.use(ProdutosController);
-app.use(CarrinhoController);
+app.use(UsuariosRouter);
+app.use(ProdutosRouter);
+app.use(CarrinhoRouter);
 
 app.listen(port);

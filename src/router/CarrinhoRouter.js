@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {createTable, selectCarrinho, selectCarrinhoId, insertCarrinho, updateCarrinho, deleteCarrinho} from '../dao/carrinhoDAO.js'
+import {createTable, selectCarrinho, selectCarrinhoId, insertCarrinho, updateCarrinho, deleteCarrinho} from '../controller/carrinhoController.js'
 
 const CarrinhoController = Router();
 
