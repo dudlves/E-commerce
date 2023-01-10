@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 app.use(express.json());
 
-
+const port = process.env.PORT || 3000;
 
 import usuariosController from './src/controllers/UsuariosController.js';
 import ProdutosController from './src/controllers/ProdutosController.js';
@@ -13,4 +13,4 @@ app.use(usuariosController);
 app.use(ProdutosController);
 app.use(CarrinhoController);
 
-app.listen(3000);
+app.listen(port);
